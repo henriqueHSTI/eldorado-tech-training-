@@ -12,5 +12,6 @@ Repositório de Tarefas Turma Eldorado
 	- Aline de Cantalice Mendes
 	- Álife Pereira
 	- Lucas Leal de Góes
-	- George Matos
-	- Kaibin Gao
+  - George Matos
+  - Kaibin Gao
+	- Jean Duarte
