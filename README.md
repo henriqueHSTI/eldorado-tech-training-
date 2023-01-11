@@ -13,4 +13,6 @@ Repositório de Tarefas Turma Eldorado
 	- Lucas Leal de Góes
 	- George Matos
 	- Kaibin Gao
+	- Jeison Fappi
 	- Jean Duarte
+
