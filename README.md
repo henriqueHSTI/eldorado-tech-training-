@@ -8,9 +8,9 @@ Repositório de Tarefas Turma Eldorado
 	- Gabriel Ferreira Poersch
 	- Guilherme Ribeiro Carvalho
 	- Francisco Aleson Barreto Gabriel
-  - Aline de Cantalice Mendes
+  	- Aline de Cantalice Mendes
 	- Álife Pereira
-  - Matheus N U Wiener
+  	- Matheus N U Wiener
 	- Lucas Leal de Góes
-  - George Matos
-  - Kaibin Gao
+  	- George Matos
+  	- Kaibin Gao
