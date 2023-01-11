@@ -1,0 +1,82 @@
+version: '3.8'
+
+networks:
+  eldoradoNetwork:
+    name: eldoradoNetwork
+    driver: bridge
+
+volumes:
+  node_modules:
+  mysql:
+
+services:
+
+  adminer:
+    image: adminer
+    container_name: mysql_admin
+    restart: always
+    env_file:
+     - ./environments/dev.env
+    ports:
+      - 8081:8080
+    networks:
+      - eldoradoNetwork
+    depends_on:
+      - mysql_server
+
+  mysql_server:
+    image: mysql:${MYSQL_VERSION}
+    container_name: ${MYSQL_DATABASE_CONTAINER_NAME}
+    working_dir: /var/lib/mysql
+    command: --innodb-use-native-aio=0
+    restart: always
+    tty: true
+    ports:
+      - 3306:3306
+    expose:
+      - "3306"
+    volumes:
+      - ./mysql/database:/var/lib/mysql
+      - ./mysql/scripts/:/var/lib/scripts 
+    env_file:
+     - ./environments/dev.env
+    networks:
+      - eldoradoNetwork
+    healthcheck:
+        test: "mysql -uroot -proot --execute \"SHOW DATABASES;\""
+        interval: 20s
+        timeout: 20s
+        retries: 20
+
+  mongo:
+      image: mongo
+      container_name: ${MONGO_DATABASE_CONTAINER_NAME}
+      env_file:
+        - ./environments/dev.env
+      ports:
+        - "27017:27017"
+      expose:
+        - "27017"
+      volumes:
+        - ./mongo/database:/data/db
+      networks:
+        - eldoradoNetwork
+      healthcheck:
+        test: "mysql -uroot -proot --execute \"SHOW DATABASES;\""
+        interval: 20s
+        timeout: 20s
+        retries: 20
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8083:8081
+    env_file:
+        - ./environments/dev.env
+    links:
+      - mongo
+    networks:
+      - eldoradoNetwork
+    depends_on:
+      - mongo
+      
