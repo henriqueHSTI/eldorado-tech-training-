@@ -1,4 +1,6 @@
 # eldorado-tech-training-
+Repositorio de Tarefas Turma Eldorado
+- Facilitador José Geraldo Henrique da Silva
 Repositório de Tarefas Turma Eldorado
 # Facilitador 
 	- Isabel 
@@ -12,3 +14,5 @@ Repositório de Tarefas Turma Eldorado
 	- Álife Pereira
 	- Lucas Leal de Góes
     - Kaibin Gao
+    - Jehan Lucas Vieira e SIlva
+
