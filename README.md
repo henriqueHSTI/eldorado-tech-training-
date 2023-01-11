@@ -1,6 +1,13 @@
 # eldorado-tech-training-
 Repositorio de Tarefas Turma Eldorado
-- Facilitador José Geraldo Henrique da Silva
-- Gabriel Ferreira Poersch
-- Guilherme Ribeiro Carvalho
-- Álife Pereira
+
+# Facilitador 
+	- Isabel 
+	- José Geraldo Henrique da Silva
+	
+# Colaboradores
+	- Gabriel Ferreira Poersch
+	- Guilherme Ribeiro Carvalho
+	- Francisco Aleson Barreto Gabriel
+	- Álife Pereira
+
