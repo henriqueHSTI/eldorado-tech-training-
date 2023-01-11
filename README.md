@@ -10,4 +10,6 @@ Repositorio de Tarefas Turma Eldorado
 	- Guilherme Ribeiro Carvalho
 	- Francisco Aleson Barreto Gabriel
 	- Álife Pereira
+	- Lucas Leal de Góes
+
 
