@@ -1,10 +1,9 @@
 # eldorado-tech-training-
-Repositorio de Tarefas Turma Eldorado
-
+Repositório de Tarefas Turma Eldorado
 # Facilitador 
 	- Isabel 
 	- José Geraldo Henrique da Silva
-	
+
 # Colaboradores
 	- Gabriel Ferreira Poersch
 	- Guilherme Ribeiro Carvalho
@@ -12,4 +11,5 @@ Repositorio de Tarefas Turma Eldorado
     - Aline de Cantalice Mendes
 	- Álife Pereira
 	- Lucas Leal de Góes
-    - George Matos
+  - George Matos
+  - Kaibin Gao
