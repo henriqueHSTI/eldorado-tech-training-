@@ -1,4 +1,15 @@
 # eldorado-tech-training-
 Repositorio de Tarefas Turma Eldorado
-- Facilitador José Geraldo Henrique da Silva
-- Jefferson Siqueira
+
+# Facilitador 
+	- Isabel 
+	- José Geraldo Henrique da Silva
+	
+# Colaboradores
+	- Gabriel Ferreira Poersch
+	- Guilherme Ribeiro Carvalho
+	- Francisco Aleson Barreto Gabriel
+	- Álife Pereira
+	- Lucas Leal de Góes
+	- Jefferson Siqueira
+
