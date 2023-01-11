@@ -9,3 +9,4 @@ Repositorio de Tarefas Turma Eldorado
 	- Gabriel Ferreira Poersch
 	- Guilherme Ribeiro Carvalho
 	- Francisco Aleson Barreto Gabriel
+    - Rodrigo de Lima Ferreira
