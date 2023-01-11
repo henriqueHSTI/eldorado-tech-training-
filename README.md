@@ -13,3 +13,5 @@ Repositório de Tarefas Turma Eldorado
 	- Lucas Leal de Góes
   - Matheus Henrique de Brito Silva
   - Kaibin Gao
+  - George Matos
+  - Kaibin Gao
