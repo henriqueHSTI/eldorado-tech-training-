@@ -10,5 +10,5 @@ Repositorio de Tarefas Turma Eldorado
 	- Guilherme Ribeiro Carvalho
 	- Francisco Aleson Barreto Gabriel
 	- Álife Pereira
-    - Matheus N U Wiener
-
+  - Matheus N U Wiener
+	- Lucas Leal de Góes
