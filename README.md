@@ -1,4 +1,5 @@
 # eldorado-tech-training-
+
 Repositório de Tarefas Turma Eldorado
 # Facilitador 
 	- Isabel 
@@ -13,3 +14,5 @@ Repositório de Tarefas Turma Eldorado
 	- Lucas Leal de Góes
   - George Matos
   - Kaibin Gao
+  - Mariana Aparecida 
+
