@@ -11,3 +11,6 @@ Repositorio de Tarefas Turma Eldorado
 	- Francisco Aleson Barreto Gabriel
     - Aline de Cantalice Mendes
 	- Álife Pereira
+	- Lucas Leal de Góes
+
+
