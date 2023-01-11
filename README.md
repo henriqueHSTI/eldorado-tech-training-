@@ -13,3 +13,7 @@ Repositório de Tarefas Turma Eldorado
 	- Lucas Leal de Góes
 	- Matheus Britzke
   - Kaibin Gao
+	- George Matos
+	- Kaibin Gao
+	- Jeison Fappi
+	- Jean Duarte
