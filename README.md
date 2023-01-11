@@ -14,3 +14,5 @@ Repositório de Tarefas Turma Eldorado
 	- George Matos
 	- Kaibin Gao
 	- Jeison Fappi
+	- Jean Duarte
+
