@@ -1,5 +1,7 @@
 package com.eldorado.calculo;
 
+import com.eldorado.calculo.model.Person;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,32 +10,16 @@ public class Main {
 
         final Logger logger = Logger.getLogger(Main.class.getName());
 
-        double weight = 1.66;
-        double height = 78.0;
+        var person = new Person();
+        person.setName("Kennedy");
+        person.setHeight(1.66);
+        person.setWeight(78.0);
+        person.setAge(25);
+        person.setGender('M');
 
-        logger.log(Level.INFO, imcMessage(calcImc(weight, height)));
+        logger.log(Level.INFO, person.imcMessage());
 
     }
 
-    public static double calcImc(double weight, double height){
-        return weight / (height * height);
-    }
 
-    public static String imcMessage(double imcResult){
-        String response = "";
-        if(imcResult >= 40) {
-            response = "Obesity III (morbid)";
-        } else if (imcResult >= 35) {
-            response = "Obesity stage II (severe)";
-        } else if (imcResult >= 30) {
-            response = "Obesity stage I";
-        } else if (imcResult >= 25) {
-            response = "Slightly above the weight";
-        } else if (imcResult >= 18.6) {
-            response = "Ideal weight (congrats)";
-        } else {
-            response = "Below weight";
-        }
-        return response;
-    }
 }
