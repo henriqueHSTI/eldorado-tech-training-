@@ -11,8 +11,9 @@ Repositório de Tarefas Turma Eldorado
   	- Aline de Cantalice Mendes
 	- Álife Pereira
 	- Lucas Leal de Góes
-  - Matheus Henrique de Brito Silva
+  	- Matheus Henrique de Brito Silva
 	- George Matos
 	- Kaibin Gao
 	- Jeison Fappi
 	- Jean Duarte
+	- Chuks Ricardo
