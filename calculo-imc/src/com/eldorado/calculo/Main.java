@@ -10,34 +10,55 @@ import java.util.logging.Logger;
 public class Main {
 
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         var calculaImcFerramenta = new CalculoImcFerramenta();
-        var pessoa = new Pessoa();
 
-        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            var pessoa = new Pessoa();
 
-        System.out.println("Digite seu Nome");
-        pessoa.setNome(scanner.nextLine());
+            System.out.println("Digite seu Nome");
+            pessoa.setNome(scanner.nextLine());
 
-        System.out.println("Digite sua altura");
-        pessoa.setAltura(scanner.nextDouble());
+            System.out.println("Digite sua altura");
+            pessoa.setAltura(lerValorDoubleUsuario(scanner));
 
-        System.out.println("Digite seu peso");
-        pessoa.setPeso(scanner.nextDouble());
+            System.out.println("Digite seu peso");
+            pessoa.setPeso(lerValorDoubleUsuario(scanner));
 
-        System.out.println("Digite susa Idade");
-        pessoa.setIdade(scanner.nextInt());
+            System.out.println("Digite sua Idade");
+            pessoa.setIdade(lerIntegerUsuario(scanner));
 
+            double imc = calculaImcFerramenta.calculaImc(pessoa);
 
-        double imc = calculaImcFerramenta.calculaImc(pessoa);
+            LOGGER.log(Level.INFO, pessoa.toString());
 
-        LOGGER.log(Level.INFO, pessoa.toString());
+            calculaImcFerramenta.printInformacao(imc);
 
-        calculaImcFerramenta.printInformacao(imc);
+            LOGGER.info(calculaImcFerramenta.retornaNivelObesidade("AAAA"));
 
-        LOGGER.info(calculaImcFerramenta.retornaNivelObesidade("AAAA"));
+        }
+        scanner.close();
+    }
+
+    private static Integer lerIntegerUsuario(Scanner scanner) {
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, String.format("Valor digitado incorreto -> %s", scanner.nextLine()));
+        }
+        return Integer.MIN_VALUE;
+    }
+
+    private static Double lerValorDoubleUsuario(Scanner scanner) {
+        try {
+            return Double.parseDouble(scanner.nextLine());
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, String.format("Valor digitado incorreto -> %s", scanner.nextLine()));
+        }
+        return Double.MIN_NORMAL;
     }
 
 
