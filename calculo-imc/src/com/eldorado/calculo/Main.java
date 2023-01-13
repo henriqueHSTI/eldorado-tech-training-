@@ -1,5 +1,7 @@
 package com.eldorado.calculo;
 
+import com.eldorado.calculo.exceptions.WrongHeightException;
+import com.eldorado.calculo.exceptions.WrongWeightException;
 import com.eldorado.calculo.modelo.Pessoa;
 import com.eldorado.calculo.utilidades.CalculoImcFerramenta;
 
@@ -24,14 +26,62 @@ public class Main {
             System.out.println("Digite seu Nome");
             pessoa.setNome(scanner.nextLine());
 
-            System.out.println("Digite sua altura");
-            pessoa.setAltura(lerValorDoubleUsuario(scanner));
+            while(true){
+                try {
+                    System.out.println("Digite sua altura");
+                    Double altura = lerValorDoubleUsuario(scanner);
+                    if (altura < 0.0){
 
-            System.out.println("Digite seu peso");
-            pessoa.setPeso(lerValorDoubleUsuario(scanner));
+                        throw new WrongHeightException("Altura inválida");
+                    }else{
+                        pessoa.setAltura(altura);
+                        break;
+                    }
 
-            System.out.println("Digite sua Idade");
-            pessoa.setIdade(lerIntegerUsuario(scanner));
+                }catch (WrongHeightException e){
+
+                    e.printStackTrace();
+                }
+
+            }
+
+            while(true){
+                try {
+                    System.out.println("Digite seu peso");
+                    Double peso = lerValorDoubleUsuario(scanner);
+                    if (peso < 0.0){
+
+                        throw new WrongWeightException("Peso inválido");
+                    }else{
+                        pessoa.setPeso(peso);
+                        break;
+                    }
+
+                }catch (WrongWeightException e){
+
+                    e.printStackTrace();
+                }
+
+            }
+
+            while(true){
+                try {
+                    System.out.println("Digite seu peso");
+                    Integer idade = lerIntegerUsuario(scanner);
+                    if (idade < 0.0){
+
+                        throw new WrongWeightException("Idade inválida");
+                    }else{
+                        pessoa.setIdade(idade);
+                        break;
+                    }
+
+                }catch (WrongWeightException e){
+
+                    e.printStackTrace();
+                }
+
+            }
 
             double imc = calculaImcFerramenta.calculaImc(pessoa);
 
