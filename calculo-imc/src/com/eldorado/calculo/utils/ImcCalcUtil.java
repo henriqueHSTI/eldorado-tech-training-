@@ -27,4 +27,20 @@ public class ImcCalcUtil {
         logger.log(Level.INFO, person.toString());
         logger.log(Level.INFO, response);
     }
+
+    public void obesityLevel(String imcResult){
+        switch (imcResult){
+            case "Obesity III (morbid)":
+                logger.info("III");
+                break;
+            case "Obesity stage II (severe)":
+                logger.info("II");
+                break;
+            case "Obesity stage I":
+                logger.info("I");
+                break;
+            default:
+                logger.info("0");
+        }
+    }
 }
