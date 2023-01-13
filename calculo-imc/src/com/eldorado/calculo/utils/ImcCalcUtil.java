@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 public class ImcCalcUtil {
 
     final Logger logger = Logger.getLogger(ImcCalcUtil.class.getName());
-    public void printImc(double imc){
+    public void printImc(double imc, Person person){
         String response = "";
         if(imc >= 40) {
             response = "Obesity III (morbid)";
@@ -24,6 +24,7 @@ public class ImcCalcUtil {
             response = "Below weight";
         }
 
+        logger.log(Level.INFO, person.toString());
         logger.log(Level.INFO, response);
     }
 }
