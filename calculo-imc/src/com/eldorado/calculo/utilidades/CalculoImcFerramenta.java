@@ -3,45 +3,52 @@ package com.eldorado.calculo.utilidades;
 import com.eldorado.calculo.modelo.Pessoa;
 
 public class CalculoImcFerramenta {
-    public static double calculaImc(Pessoa pessoa) {
-        return pessoa.getPeso() / (pessoa.getAltura() * pessoa.getAltura());
-    }
 
-    public String printInformacao(double imc, Pessoa pessoa) {
-        if (imc < 18) {
-            return String.format("IMC: %s, Classificação: %s, Nivel de Obesidade %s", imc, "`MAGRESA`", "0");
+    public static final String MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S = "MC: %s\n Classificação: %s\n Nivel de Obesidade: %s";
+
+    public String printInformacao(double imc) {
+
+        if (imc < 18.5) {
+            return String.format(MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Magresa", "0");
         } else if (imc < 25) {
-            return String.format("IMC: %s, Classificação: %s, Nivel de Obesidade %s", imc, "NORMAL", "0");
+            return String.format(MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Normal", "0");
         } else if (imc < 30) {
-            return String.format("IMC: %s, Classificação: %s, Nivel de Obesidade %s", imc, "SOBREPESO", "I") ;
+            return String.format(MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Sobrepeso", "I");
         } else if (imc < 40) {
-            return String.format("IMC: %s, Classificação: %s, Nivel de Obesidade %s", imc, "OBESIDADE", "II");
+            return String.format(MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Obesidade ", "II");
         } else {
-            return String.format("IMC: %s, Classificação: %s, Nivel de Obesidade %s", imc, "OBESIDADE GRAVE", "III");
+            return String.format(MC_S_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Obesidade Grave", "III");
         }
     }
 
-    public String calculaImc(String classificacao){
-        String nivelObesidade = "III";
+    public String retornaNivelObesidade(String classificao) {
 
-        switch(classificacao){
-            case "MAGRESA":
-                nivelObesidade = "0";
+        String nivelObsidade;
+
+        switch (classificao) {
+            case "Magresa":
+                nivelObsidade = "0";
                 break;
-            case "NORMAL":
-                nivelObesidade = "0";
+            case "Normal":
+                nivelObsidade = "0";
                 break;
-            case "SOBREPESO":
-                nivelObesidade = "1";
+            case "Sobrepeso":
+                nivelObsidade = "I";
                 break;
-            case "OBESIDADE":
-                nivelObesidade = "2";
+            case "Obesidade":
+                nivelObsidade = "II";
                 break;
+
             default:
-                nivelObesidade = "III";
-
+                nivelObsidade = "III";
         }
-    return nivelObesidade;
+
+        return nivelObsidade;
+
+    }
+
+    public double calculaImc(Pessoa pessoa) {
+        return pessoa.getPeso() / (pessoa.getAltura() * pessoa.getAltura());
     }
 
 }

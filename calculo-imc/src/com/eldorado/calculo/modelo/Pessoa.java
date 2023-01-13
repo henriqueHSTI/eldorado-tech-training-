@@ -1,23 +1,19 @@
 package com.eldorado.calculo.modelo;
 
-import java.util.Date;
-
 public class Pessoa {
-    public Pessoa() {
-    }
 
     double altura;
     double peso;
     String nome;
-    char genero;
-    short idade;
+    String genero;
+    int idade;
 
 
     public double getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public void setAltura(Double altura) {
         this.altura = altura;
     }
 
@@ -25,7 +21,7 @@ public class Pessoa {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(Double peso) {
         this.peso = peso;
     }
 
@@ -37,19 +33,19 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public short getIdade() {
+    public Integer getIdade() {
         return idade;
     }
 
-    public void setIdade(short idade) {
+    public void setIdade(Integer idade) {
         this.idade = idade;
     }
 
