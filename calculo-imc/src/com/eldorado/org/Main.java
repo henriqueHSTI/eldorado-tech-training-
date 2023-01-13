@@ -1,16 +1,42 @@
 package com.eldorado.org;
 
+import com.eldorado.org.imc.CalculaImcUtil;
+
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Main {
+    private static final Logger LOGGER = Logger.getLogger (Main.class.getCanonicalName());
+
+
+
     public static void main(String[] args) {
-        double altura = 1.80;
-        double peso = 85.8;
-        double imc;
+        Scanner entrada = new Scanner(System.in);
 
-        imc = peso / (altura * altura);
-        System.out.println(imc);
 
-        Logger.g
+
+        System.out.println("Digite seu nome: ");
+        String nome = entrada.nextLine();
+
+        System.out.println("Digite sua altura: ");
+        double altura = entrada.nextDouble();
+
+        System.out.println("Digite seu peso");
+        double peso = entrada.nextDouble();
+
+        System.out.println("Digite seu sexo");
+        char sexo = entrada.next().charAt(0);
+
+
+        double resultadoImc = CalculaImcUtil.calcula(altura, peso);
+        System.out.println("Seu Imc é: " + resultadoImc);
+
+        String clasificacao = CalculaImcUtil.printInformacao(resultadoImc);
+        System.out.println("Sua clasificação é: " + clasificacao);
+
+        entrada.close();
     }
+
+
+
 }
