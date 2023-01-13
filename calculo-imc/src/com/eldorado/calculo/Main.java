@@ -1,5 +1,7 @@
 package com.eldorado.calculo;
 
+import com.eldorado.calculo.exceptions.WrongAgeException;
+import com.eldorado.calculo.exceptions.WrongGenderException;
 import com.eldorado.calculo.exceptions.WrongHeightException;
 import com.eldorado.calculo.exceptions.WrongWeightException;
 import com.eldorado.calculo.modelo.Pessoa;
@@ -23,65 +25,15 @@ public class Main {
 
             var pessoa = new Pessoa();
 
-            System.out.println("Digite seu Nome");
-            pessoa.setNome(scanner.nextLine());
+            setNomePessoa(pessoa);
 
-            while(true){
-                try {
-                    System.out.println("Digite sua altura");
-                    Double altura = lerValorDoubleUsuario(scanner);
-                    if (altura < 0.0){
+            setGeneroPessoa(pessoa);
 
-                        throw new WrongHeightException("Altura inválida");
-                    }else{
-                        pessoa.setAltura(altura);
-                        break;
-                    }
+            setAlturaPessoa(pessoa);
 
-                }catch (WrongHeightException e){
+            setPesoPessoa(pessoa);
 
-                    e.printStackTrace();
-                }
-
-            }
-
-            while(true){
-                try {
-                    System.out.println("Digite seu peso");
-                    Double peso = lerValorDoubleUsuario(scanner);
-                    if (peso < 0.0){
-
-                        throw new WrongWeightException("Peso inválido");
-                    }else{
-                        pessoa.setPeso(peso);
-                        break;
-                    }
-
-                }catch (WrongWeightException e){
-
-                    e.printStackTrace();
-                }
-
-            }
-
-            while(true){
-                try {
-                    System.out.println("Digite seu peso");
-                    Integer idade = lerIntegerUsuario(scanner);
-                    if (idade < 0.0){
-
-                        throw new WrongWeightException("Idade inválida");
-                    }else{
-                        pessoa.setIdade(idade);
-                        break;
-                    }
-
-                }catch (WrongWeightException e){
-
-                    e.printStackTrace();
-                }
-
-            }
+            setIdadePessoa(pessoa);
 
             double imc = calculaImcFerramenta.calculaImc(pessoa);
 
@@ -100,23 +52,105 @@ public class Main {
         scanner.close();
     }
 
-    private static Integer lerIntegerUsuario(Scanner scanner) {
-        try {
-            return Integer.parseInt(scanner.nextLine());
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, String.format("Valor digitado incorreto -> %s", scanner.nextLine()));
+    private static void setIdadePessoa(Pessoa pessoa) {
+        while (true) {
+            try {
+                System.out.println("Digite sua idade");
+                Integer idade = Integer.parseInt(scanner.nextLine());
+                if (idade < 0.0) {
+                    throw new WrongAgeException("Idade inválida");
+                } else {
+                    pessoa.setIdade(idade);
+                    break;
+                }
+            } catch (WrongAgeException e) {
+
+                LOGGER.log(Level.SEVERE, "Idade Inválida");
+            }
+
         }
-        return Integer.MIN_VALUE;
     }
 
-    private static Double lerValorDoubleUsuario(Scanner scanner) {
-        try {
-            return Double.parseDouble(scanner.nextLine());
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, String.format("Valor digitado incorreto -> %s", scanner.nextLine()));
+    private static void setPesoPessoa(Pessoa pessoa) {
+        while (true) {
+            try {
+                System.out.println("Digite seu peso");
+                Double peso = Double.parseDouble(scanner.nextLine());
+                if (peso < 0.0) {
+
+                    throw new WrongWeightException("Peso inválido");
+                } else {
+                    pessoa.setPeso(peso);
+                    break;
+                }
+
+            } catch (WrongWeightException e) {
+
+                LOGGER.log(Level.SEVERE, "Peso Inválido");
+            }
+
         }
-        return Double.MIN_NORMAL;
     }
 
+    private static void setAlturaPessoa(Pessoa pessoa) {
+        while (true) {
+            try {
+                System.out.println("Digite sua altura");
+                Double altura = Double.parseDouble(scanner.nextLine());
+                if (altura < 0.0) {
+
+                    throw new WrongHeightException("Altura inválida");
+
+                } else {
+                    pessoa.setAltura(altura);
+                    break;
+                }
+
+            } catch (WrongHeightException e) {
+
+                LOGGER.log(Level.SEVERE, "Altura Inválida");
+            }
+
+        }
+
+    }
+
+    private static void setGeneroPessoa(Pessoa pessoa) {
+        while (true) {
+            try {
+                System.out.println("Digite seu genero");
+                String genero = scanner.nextLine();
+                if (!genero.equals("M") && !genero.equals("F")) {
+
+                    throw new WrongGenderException("Altura inválida");
+
+                } else {
+                    pessoa.setGenero(genero);
+                    break;
+                }
+
+            } catch (WrongGenderException e) {
+
+                LOGGER.log(Level.SEVERE, "Genero Inválido");
+            }
+
+        }
+    }
+
+    private static void setNomePessoa(Pessoa pessoa) {
+        while (true) {
+            try {
+                System.out.println("Digite seu nome");
+                String nome = scanner.nextLine();
+                pessoa.setNome(nome);
+                break;
+
+            } catch (Exception e) {
+
+                LOGGER.log(Level.SEVERE, "Nome Inválido");
+            }
+
+        }
+    }
 
 }
