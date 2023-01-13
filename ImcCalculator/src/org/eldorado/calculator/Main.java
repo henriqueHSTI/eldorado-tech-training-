@@ -4,9 +4,16 @@ import org.eldorado.calculator.domain.Classifier.Classifier;
 import org.eldorado.calculator.domain.Classifier.IWeightClassifier;
 import org.eldorado.calculator.domain.Classifier.impl.*;
 import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
+import org.eldorado.calculator.domain.utils.PersonCreatorCli;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
 
         IWeightClassifier underweight = new Underweight();
         IWeightClassifier normal = new Normal();
@@ -16,9 +23,13 @@ public class Main {
 
         Classifier classifier = new Classifier(underweight, normal, overweight, obese, noClassification);
 
-        PersonImcData data = new PersonImcData(1.76, 0);
+        PersonCreatorCli cli = new PersonCreatorCli(scanner);
 
-        System.out.println(classifier.classify(data));
+        var data = cli.createPerson();
+
+        //PersonImcData data = new PersonImcData(1.76, 0, "fulano", 'M', LocalDate.of(1995, 1, 16));
+
+        Logger.getLogger(Main.class.getSimpleName()).info(classifier.classify(data).toString());
 
     }
 }
