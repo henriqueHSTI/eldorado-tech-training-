@@ -5,7 +5,7 @@ public class Pessoa {
         double peso;
         String nome;
         char genero;
-        short idade;
+        int idade;
 
         public double getAltura() {
             return altura;
@@ -39,11 +39,11 @@ public class Pessoa {
             this.genero = genero;
         }
 
-        public short getIdade() {
+        public int getIdade() {
             return idade;
         }
 
-        public void setIdade(short idade) {
+        public void setIdade(int idade) {
             this.idade = idade;
         }
 
