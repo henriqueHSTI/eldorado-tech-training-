@@ -1,17 +1,26 @@
 package org.eldorado.calculo;
 
 
+import org.eldorado.calculo.models.Person;
+import org.eldorado.calculo.utils.CalculatorIMC;
+
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Main {
+
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
 
-        double altura = 1.75;
-        double peso = 85.8;
+        var imcTool = new CalculatorIMC();
+        var person = new Person();
 
-        double imc;
+        Scanner scanner = new Scanner(System.in);
 
-        imc = peso / (altura * altura);
-
-        System.out.println(imc);
+        System.out.println("Type your name: ");
+        person.setName(scanner.nextLine());
 
     }
 }
