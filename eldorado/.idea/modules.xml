@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/eldorado.br.iml" filepath="$PROJECT_DIR$/eldorado.br.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eldorado.iml" filepath="$PROJECT_DIR$/eldorado.iml" />
     </modules>
   </component>
 </project>
