@@ -2,6 +2,9 @@ package com.eldorado.calculo.Utils;
 
 import com.eldorado.calculo.models.Pessoa;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,12 +12,12 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class LeituraImc {
+public class CalculoImc {
 
-    private static final Logger LOGGER = Logger.getLogger(LeituraImc.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(CalculoImc.class.getName());
     static Scanner scanner = new Scanner(System.in);
 
-    public void lerImc() {
+    public List<Pessoa> lerImc() {
         boolean continuar = true;
 
         List<Pessoa> pessoas = new ArrayList<>();
@@ -31,6 +34,9 @@ public class LeituraImc {
 
             System.out.println("Digite seu peso");
             pessoa.setPeso(Util.lerValorDoubleUsuario(scanner));
+
+            System.out.println("Digite seu Gênero");
+            pessoa.setGenero(scanner.nextLine().charAt(0));
 
             System.out.println("Digite sua Idade");
             pessoa.setIdade(Util.lerIntegerUsuario(scanner));
@@ -49,7 +55,23 @@ public class LeituraImc {
         }
 
         scanner.close();
-
         LOGGER.log(Level.INFO, String.format("Número de Cadastros: " + pessoas.size()));
+
+        return pessoas;
+    }
+
+    public void gravaListaPessoas(List<Pessoa> pessoasList) {
+
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("pessoas.txt"));
+            for (Pessoa pessoa: pessoasList) {
+                bufferedWriter.write(pessoa.toString());
+                bufferedWriter.append("\n");
+                bufferedWriter.flush();
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

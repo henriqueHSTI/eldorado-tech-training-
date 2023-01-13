@@ -1,9 +1,11 @@
 package com.eldorado.calculo;
 
-import com.eldorado.calculo.Utils.LeituraImc;
-import com.eldorado.calculo.Utils.Util;
+import com.eldorado.calculo.Utils.CalculoImc;
+import com.eldorado.calculo.models.Pessoa;
 
-import java.util.Objects;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -13,9 +15,10 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         LOGGER.info("Aplicação Iniciada");
-        var leituraImc = new LeituraImc();
-        leituraImc.lerImc();
-        
+        var imc = new CalculoImc();
+        List<Pessoa> pessoasList = imc.lerImc();
+        imc.gravaListaPessoas(pessoasList);
+
     }
 
 }
