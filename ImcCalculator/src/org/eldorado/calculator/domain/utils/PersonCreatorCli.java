@@ -3,10 +3,11 @@ package org.eldorado.calculator.domain.utils;
 import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -18,6 +19,18 @@ public class PersonCreatorCli implements Serializable {
     public PersonCreatorCli(Scanner scanner){
         this.scanner = scanner;
         this.LOGGER = Logger.getLogger("PersonCreatorCli");
+    }
+
+    public List<PersonImcData> createMultiplePerson(){
+        var people = new ArrayList<PersonImcData>();
+        var option = false;
+        do {
+            var person = createPerson();
+            people.add(person);
+            System.out.println("Create new [y/n]: ");
+            option = scanner.nextLine().toLowerCase().charAt(0) == 'y'? true : false;
+        } while(option);
+        return people;
     }
     public PersonImcData createPerson(){
 
@@ -67,7 +80,7 @@ public class PersonCreatorCli implements Serializable {
 
     private char getGender() {
         System.out.println("Gender: ");
-        return  scanner.next().charAt(0);
+        return  scanner.nextLine().charAt(0);
     }
 
 }

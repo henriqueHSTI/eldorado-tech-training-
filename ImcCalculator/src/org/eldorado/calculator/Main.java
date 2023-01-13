@@ -3,10 +3,8 @@ package org.eldorado.calculator;
 import org.eldorado.calculator.domain.Classifier.Classifier;
 import org.eldorado.calculator.domain.Classifier.IWeightClassifier;
 import org.eldorado.calculator.domain.Classifier.impl.*;
-import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
 import org.eldorado.calculator.domain.utils.PersonCreatorCli;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -25,11 +23,14 @@ public class Main {
 
         PersonCreatorCli cli = new PersonCreatorCli(scanner);
 
-        var data = cli.createPerson();
+        var dataList = cli.createMultiplePerson();
 
         //PersonImcData data = new PersonImcData(1.76, 0, "fulano", 'M', LocalDate.of(1995, 1, 16));
 
-        Logger.getLogger(Main.class.getSimpleName()).info(classifier.classify(data).toString());
+        dataList.forEach(data ->
+            Logger.getLogger(Main.class.getSimpleName()).info(classifier.classify(data).toString())
+        );
+
 
     }
 }
