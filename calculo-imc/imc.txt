@@ -1,0 +1,2 @@
+Pessoa{altura=2.2250738585072014E-308, nome='2', idade=2}
+Pessoa{altura=4.0, nome='3', idade=6}

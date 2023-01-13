@@ -5,6 +5,7 @@ import com.eldorado.calculo.modelo.Pessoa;
 import com.eldorado.calculo.utilidades.CalculoImcFerramenta;
 import com.eldorado.calculo.utilidades.Utilidades;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,7 @@ public class InicioCalculoImc {
 
     public void inicio() {
         var calculaImcFerramenta = new CalculoImcFerramenta();
+        var gerenciaArquivo = new GerenciaArquivo();
         boolean continuar = true;
 
         List<Pessoa> pessoas = new ArrayList<>();
@@ -54,7 +56,11 @@ public class InicioCalculoImc {
             continuar = Objects.equals("C", line);
 
         }
-
+        try {
+            gerenciaArquivo.recebeListaPessoaParaGravarArquivo(pessoas, "imc.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         scanner.close();
 
         LOGGER.log(Level.INFO, String.format("Número de Cadastros: " + pessoas.size()));
