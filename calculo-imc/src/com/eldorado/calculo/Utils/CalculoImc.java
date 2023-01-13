@@ -65,8 +65,7 @@ public class CalculoImc {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("pessoas.txt"));
             for (Pessoa pessoa: pessoasList) {
-                bufferedWriter.write(pessoa.toString());
-                bufferedWriter.append("\n");
+                bufferedWriter.append(pessoa.toString() + " \n");
                 bufferedWriter.flush();
             }
             bufferedWriter.close();
