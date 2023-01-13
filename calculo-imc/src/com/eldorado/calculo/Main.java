@@ -3,6 +3,7 @@ package com.eldorado.calculo;
 import com.eldorado.calculo.modelo.Pessoa;
 import com.eldorado.calculo.utilidades.CalculoImcFerramenta;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,8 +16,9 @@ public class Main {
     public static void main(String[] args) {
 
         var calculaImcFerramenta = new CalculoImcFerramenta();
+        boolean continuar = true;
+        while (continuar) {
 
-        for (int i = 0; i < 3; i++) {
             var pessoa = new Pessoa();
 
             System.out.println("Digite seu Nome");
@@ -38,6 +40,11 @@ public class Main {
             calculaImcFerramenta.printInformacao(imc);
 
             LOGGER.info(calculaImcFerramenta.retornaNivelObesidade("AAAA"));
+
+            System.out.println("Digite C continuar e S para sair");
+            String line = scanner.nextLine();
+
+            continuar = Objects.equals("C", line);
 
         }
         scanner.close();

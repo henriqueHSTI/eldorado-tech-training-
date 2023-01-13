@@ -2,11 +2,11 @@ package com.eldorado.calculo.modelo;
 
 public class Pessoa {
 
-    Double altura;
-    Double peso;
+    double altura;
+    double peso;
     String nome;
     String genero;
-    Integer idade;
+    int idade;
 
 
     public double getAltura() {
