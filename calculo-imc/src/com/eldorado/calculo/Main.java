@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class Main {
     public static final Logger LOGGER = Logger.getLogger(Main.class.getName());
@@ -22,6 +23,11 @@ public class Main {
         //gerenciadorArquivos.gravaListaPessoas(pessoasList);
 
         List<Pessoa> pessoasList = gerenciadorArquivos.lerArquivoPessoasCsv();
+        pessoasList = pessoasList.stream()
+                .filter(a -> a.getGenero() == 'F')
+                .collect(Collectors.toList());
+
+
         System.out.println(pessoasList.toString());
     }
 

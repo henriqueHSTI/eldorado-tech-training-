@@ -33,22 +33,21 @@ public class GerenciadorArquivos {
             String arquivo = bufferedReader.readLine();
 
             while(arquivo != null){
-                System.out.println("leu linha");
                 String[] pessoaArquivo = arquivo.split(";");
-                if (pessoaArquivo[4].equals("F")) {
-                    Pessoa pessoa = new Pessoa();
-                    pessoa.setNome(pessoaArquivo[0]);
-                    pessoa.setIdade(pessoaArquivo[1]);
-                    if (!pessoaArquivo[2].equalsIgnoreCase(null)) {
-                        pessoa.setAltura(tratarValoresToDouble(pessoaArquivo[2]));
-                    }
-                    if (!pessoaArquivo[3].equalsIgnoreCase(null) && !pessoaArquivo[3].isEmpty()) {
-                        pessoa.setPeso(pessoaArquivo[3]);
-                    }
-                    pessoa.setGenero(pessoaArquivo[4]);
 
-                    pessoas.add(pessoa);
+                Pessoa pessoa = new Pessoa();
+                pessoa.setNome(pessoaArquivo[0]);
+                pessoa.setIdade(pessoaArquivo[1]);
+                if (!pessoaArquivo[2].equalsIgnoreCase(null)) {
+                    pessoa.setAltura(tratarValoresToDouble(pessoaArquivo[2]));
                 }
+                if (!pessoaArquivo[3].equalsIgnoreCase(null) && !pessoaArquivo[3].isEmpty()) {
+                    pessoa.setPeso(pessoaArquivo[3]);
+                }
+                pessoa.setGenero(pessoaArquivo[4]);
+
+                pessoas.add(pessoa);
+
                 arquivo = bufferedReader.readLine();
             }
 
