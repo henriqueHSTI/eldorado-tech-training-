@@ -1,6 +1,7 @@
 package com.eldorado.calculo;
 
 import com.eldorado.calculo.Utils.CalculoImc;
+import com.eldorado.calculo.Utils.GerenciadorArquivos;
 import com.eldorado.calculo.models.Pessoa;
 
 import java.io.BufferedWriter;
@@ -16,9 +17,12 @@ public class Main {
     public static void main(String[] args) {
         LOGGER.info("Aplicação Iniciada");
         var imc = new CalculoImc();
-        List<Pessoa> pessoasList = imc.lerImc();
-        imc.gravaListaPessoas(pessoasList);
+        var gerenciadorArquivos = new GerenciadorArquivos();
+        // List<Pessoa> pessoasList = imc.lerImc();
+        //gerenciadorArquivos.gravaListaPessoas(pessoasList);
 
+        List<Pessoa> pessoasList = gerenciadorArquivos.lerArquivoPessoasCsv();
+        System.out.println(pessoasList.toString());
     }
 
 }

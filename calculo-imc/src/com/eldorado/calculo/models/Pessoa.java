@@ -6,13 +6,16 @@ public class Pessoa {
         String nome;
         char genero;
         int idade;
-
+        double imc;
         public double getAltura() {
             return altura;
         }
 
         public void setAltura(double altura) {
             this.altura = altura;
+        }
+        public void setAltura(String altura) {
+            this.altura = Double.parseDouble(altura);
         }
 
         public double getPeso() {
@@ -21,6 +24,10 @@ public class Pessoa {
 
         public void setPeso(double peso) {
             this.peso = peso;
+        }
+
+        public void setPeso(String peso) {
+            this.peso = Double.parseDouble(peso);
         }
 
         public String getNome() {
@@ -39,6 +46,10 @@ public class Pessoa {
             this.genero = genero;
         }
 
+        public void setGenero(String genero) {
+            this.genero = genero.charAt(0);
+        }
+
         public int getIdade() {
             return idade;
         }
@@ -47,14 +58,20 @@ public class Pessoa {
             this.idade = idade;
         }
 
-        @Override
+        public void setIdade(String idade) {
+            this.idade = Integer.parseInt(idade);
+        }
+
+        public double getImc() {
+            return imc;
+        }
+
+        public void setImc(double imc) {
+            this.imc = imc;
+        }
+
+    @Override
         public String toString() {
-            return "Pessoa{" +
-                    "Altura=" + altura +
-                    ", Peso=" + peso +
-                    ", Nome='" + nome + '\'' +
-                    ", Genero=" + genero +
-                    ", Idade=" + idade +
-                    '}';
+            return nome+";"+idade+";"+altura+";"+peso+";"+genero+";"+imc;
         }
 }

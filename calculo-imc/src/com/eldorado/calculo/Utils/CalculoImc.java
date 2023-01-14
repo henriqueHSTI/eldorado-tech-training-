@@ -42,7 +42,10 @@ public class CalculoImc {
             pessoa.setIdade(Util.lerIntegerUsuario(scanner));
 
             LOGGER.log(Level.INFO, pessoa.toString());
-            String resultadoImc = Util.calculaImc(pessoa.getAltura(), pessoa.getPeso());
+
+            double imc = Util.calculaImc(pessoa.getAltura(), pessoa.getPeso());
+            pessoa.setImc(imc);
+            String resultadoImc = Util.calculaClassificacaoImc(imc);
             LOGGER.log(Level.INFO, resultadoImc);
 
             pessoas.add(pessoa);
@@ -58,19 +61,5 @@ public class CalculoImc {
         LOGGER.log(Level.INFO, String.format("Número de Cadastros: " + pessoas.size()));
 
         return pessoas;
-    }
-
-    public void gravaListaPessoas(List<Pessoa> pessoasList) {
-
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("pessoas.txt"));
-            for (Pessoa pessoa: pessoasList) {
-                bufferedWriter.append(pessoa.toString() + " \n");
-                bufferedWriter.flush();
-            }
-            bufferedWriter.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

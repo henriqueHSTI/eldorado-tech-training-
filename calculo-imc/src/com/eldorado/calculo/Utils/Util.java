@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 public class Util {
     private static final Logger LOGGER = Logger.getLogger(Util.class.getName());
 
-    private static String calculaClassificacaoImc(double imc) {
+    public static String calculaClassificacaoImc(double imc) {
 
         final String CLASSIFICACAO = "IMC: %s, Classificacao: %s, Nível de Obesidade: %s";
 
@@ -24,10 +24,8 @@ public class Util {
         }
     }
 
-    public static String calculaImc(double altura, double peso){
-        double imc = peso / (altura * altura);
-
-        return calculaClassificacaoImc(imc);
+    public static double calculaImc(double altura, double peso){
+        return  peso / (altura * altura);
     }
 
     public static Integer lerIntegerUsuario(Scanner scanner) {
