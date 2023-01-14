@@ -1,20 +1,13 @@
 package br.org.eldorado.calculoimc;
-
 import br.org.eldorado.calculoimc.model.Person;
 import br.org.eldorado.calculoimc.utils.FileManager;
 import br.org.eldorado.calculoimc.utils.Imc;
-
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 public class Main {
 
