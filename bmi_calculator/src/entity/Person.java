@@ -2,18 +2,20 @@ package entity;
 
 public class Person {
 
+    String name;
     double height;
     double weight;
-    String name;
     char gender;
     int age;
+    String bmi;
 
-    public Person(double height, double weight, String name, char gender, short age) {
+    public Person(String name, double height, double weight, char gender, int age, String bmi) {
+        this.name = name;
         this.height = height;
         this.weight = weight;
-        this.name = name;
         this.gender = gender;
         this.age = age;
+        this.bmi = bmi;
     }
 
     public Person() {
@@ -60,14 +62,39 @@ public class Person {
         this.age = age;
     }
 
+    public String getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(String bmi) {
+        this.bmi = bmi;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "height=" + height +
+                "name='" + name + '\'' +
+                ", height=" + height +
                 ", weight=" + weight +
-                ", name='" + name + '\'' +
                 ", gender=" + gender +
                 ", age=" + age +
+                ", bmi='" + bmi + '\'' +
                 '}';
+    }
+
+    public String toJson() {
+        String json = "{";
+        json += "\"name\":\"" + name + "\",";
+        json += "\"height\":" + height + ",";
+        json += "\"weight\":" + weight + ",";
+        json += "\"gender\":\"" + gender + "\",";
+        json += "\"age\":" + age + ",";
+        json += "\"bmi\":\"" + bmi + "\"";
+        json += "}";
+        return json;
+    }
+
+    public String toCSV() {
+        return name + "," + height + "," + weight + "," + gender + "," + age + "," + bmi;
     }
 }
