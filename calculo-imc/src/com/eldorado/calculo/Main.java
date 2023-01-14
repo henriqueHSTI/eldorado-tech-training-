@@ -147,7 +147,7 @@ public class Main {
 
             } catch (Exception e) {
 
-                LOGGER.log(Level.SEVERE, "Nome Inválido");
+                LOGGER.log(Level.SEVERE, "Nome Inválido.");
             }
 
         }
