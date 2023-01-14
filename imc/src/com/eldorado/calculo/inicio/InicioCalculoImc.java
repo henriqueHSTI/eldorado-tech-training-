@@ -3,6 +3,7 @@ package com.eldorado.calculo.inicio;
 import com.eldorado.calculo.Main;
 import com.eldorado.calculo.modelo.Pessoa;
 import com.eldorado.calculo.utilidades.CalculoImcFerramenta;
+import com.eldorado.calculo.utilidades.GerenciadorDeArquivos;
 import com.eldorado.calculo.utilidades.Utilidades;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class InicioCalculoImc {
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
@@ -58,6 +60,16 @@ public class InicioCalculoImc {
         scanner.close();
 
         LOGGER.log(Level.INFO, String.format("Número de Cadastros: " + pessoas.size()));
+    }
+
+    public void lerArquivo() {
+        var gerenciadorDeArquivos = new GerenciadorDeArquivos();
+        var pessoas = gerenciadorDeArquivos.lerArquivos("base-teste.txt");
+
+        List<Pessoa> listaPessoas = pessoas.stream().filter(pessoa -> pessoa.getGenero().equals("F")).collect(Collectors.toList());
+        for (Pessoa pessoa : listaPessoas){
+            System.out.println(pessoa);
+        }
     }
 
 }

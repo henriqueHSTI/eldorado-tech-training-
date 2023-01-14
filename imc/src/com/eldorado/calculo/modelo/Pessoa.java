@@ -1,6 +1,10 @@
 package com.eldorado.calculo.modelo;
 
-public class Pessoa {
+import com.eldorado.calculo.utilidades.Utilidades;
+
+import java.util.Comparator;
+
+public class Pessoa implements Comparable<Pessoa> {
 
     double altura;
     double peso;
@@ -17,12 +21,20 @@ public class Pessoa {
         this.altura = altura;
     }
 
+    public void setAltura(String altura) {
+        this.altura = Utilidades.lerValorDoubleUsuario(altura);
+    }
+
     public double getPeso() {
         return peso;
     }
 
     public void setPeso(Double peso) {
         this.peso = peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = Utilidades.lerValorDoubleUsuario(peso);
     }
 
     public String getNome() {
@@ -57,4 +69,10 @@ public class Pessoa {
                 ", idade=" + idade +
                 '}';
     }
+
+    @Override
+    public int compareTo(Pessoa o) {
+        return nome.compareTo(o.getNome());
+    }
+
 }

@@ -27,4 +27,13 @@ public class Utilidades {
         }
         return Double.MIN_NORMAL;
     }
+
+    public static Double lerValorDoubleUsuario(String string) {
+        try {
+            return Double.parseDouble(string);
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, String.format("Valor digitado incorreto -> %s", string));
+        }
+        return Double.MIN_NORMAL;
+    }
 }
