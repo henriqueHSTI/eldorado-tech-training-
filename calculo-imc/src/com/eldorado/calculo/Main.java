@@ -12,6 +12,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         LOGGER.info("Aplicação Iniciada");
         var inicio = new InicioCalculoImc();
-        inicio.inicio();
+        inicio.leListaPessoaArquivo();
     }
 }

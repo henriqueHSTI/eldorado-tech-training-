@@ -16,7 +16,9 @@ public class Pessoa {
     public void setAltura(Double altura) {
         this.altura = altura;
     }
-
+    public void setAltura(String altura) {
+        this.altura = Double.valueOf(altura);
+    }
     public double getPeso() {
         return peso;
     }
@@ -48,12 +50,17 @@ public class Pessoa {
     public void setIdade(Integer idade) {
         this.idade = idade;
     }
+    public void setIdade(String idade) {
+        this.idade = Integer.valueOf(idade);
+    }
 
     @Override
     public String toString() {
         return "Pessoa{" +
                 "altura=" + altura +
+                ", peso=" + peso +
                 ", nome='" + nome + '\'' +
+                ", genero='" + genero + '\'' +
                 ", idade=" + idade +
                 '}';
     }
