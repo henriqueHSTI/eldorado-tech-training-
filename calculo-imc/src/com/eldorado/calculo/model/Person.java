@@ -58,11 +58,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "altura=" + this.height +
-                ", peso='" + this.weight + '\'' +
-                ", nome='" + this.name + '\'' +
-                ", idade=" + this.age +
-                '}';
+        return "\"pessoa\": {" +
+                "\"altura\": " + this.height +
+                ", \"peso\": " + this.weight  +
+                ", \"nome\": \"" + this.name + "\"" +
+                ", \"idade\": " + this.age +
+                "}";
     }
 }

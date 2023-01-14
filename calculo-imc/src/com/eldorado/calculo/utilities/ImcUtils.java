@@ -4,12 +4,11 @@ import com.eldorado.calculo.model.Person;
 
 public class ImcUtils {
 
-    public static final String MC_C_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S = "MC: %s\\n Classificação: %s\\n Nivel de Obesidade: %s";
+    public static final String MC_C_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S = "MC: %s%n Classificação: %s%n Nivel de Obesidade: %s";
 
     public String printInformacao(double imc) {
-
         if (imc < 18.5) {
-            return String.format(MC_C_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Magresa", "0");
+            return String.format(MC_C_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Magreza", "0");
         } else if (imc < 25) {
             return String.format(MC_C_CLASSIFICACAO_S_NIVEL_DE_OBESIDADE_S, imc, " Normal", "0");
         } else if (imc < 30) {

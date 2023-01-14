@@ -9,9 +9,6 @@ public class fileUtils {
     public ArrayList<String> readFile() {
         var pessoas = new ArrayList<Person>();
 
-        try {
-
-        }
 
         return new ArrayList<String>();
     }

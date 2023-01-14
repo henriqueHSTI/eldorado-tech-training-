@@ -45,7 +45,8 @@ public class Main {
             LOGGER.log(Level.INFO, person.toString());
 
             pessoas.add(person);
-            calculaImcFerramenta.printInformacao(imc);
+
+            LOGGER.info(calculaImcFerramenta.printInformacao(imc));
 
             LOGGER.info(calculaImcFerramenta.retornaNivelObesidade("INFO"));
 
