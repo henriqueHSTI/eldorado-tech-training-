@@ -2,6 +2,7 @@ package com.eldorado.calculo;
 
 import com.eldorado.calculo.inicio.InicioCalculoImc;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main {
@@ -11,6 +12,10 @@ public class Main {
     public static void main(String[] args) {
         LOGGER.info("Aplicação Iniciada");
         var inicio = new InicioCalculoImc();
-        inicio.inicio();
+        try{
+            inicio.inicio();
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, e.getMessage());
+        }
     }
 }
