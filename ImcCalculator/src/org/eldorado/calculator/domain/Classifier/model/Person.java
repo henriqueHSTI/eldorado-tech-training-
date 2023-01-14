@@ -1,8 +1,9 @@
 package org.eldorado.calculator.domain.Classifier.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PersonImcData {
+public class Person implements Serializable {
 
     double height;
     double weight;
@@ -10,12 +11,16 @@ public class PersonImcData {
     char gender;
     LocalDate birthday;
 
-    public PersonImcData(double height, double weight, String name, char gender, LocalDate birthday) {
+    public Person(double height, double weight, String name, char gender, LocalDate birthday) {
         this.height = height;
         this.weight = weight;
         this.name = name;
         this.gender = gender;
         this.birthday = birthday;
+    }
+
+    public Person(String height, String weight, String name, String gender, String birthday) {
+        this(Double.parseDouble(height), Double.parseDouble(weight), name, gender.charAt(0), LocalDate.parse(birthday));
     }
 
     public double getImc(){
@@ -30,5 +35,16 @@ public class PersonImcData {
         if (this.birthday.getMonthValue() == LocalDate.now().getMonthValue() && LocalDate.now().getDayOfMonth() < this.birthday.getDayOfMonth() )
             age--;
         return age;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "height=" + height +
+                ", weight=" + weight +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                ", birthday=" + birthday +
+                '}';
     }
 }

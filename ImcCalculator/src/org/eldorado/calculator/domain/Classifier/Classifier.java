@@ -1,6 +1,6 @@
 package org.eldorado.calculator.domain.Classifier;
 
-import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
+import org.eldorado.calculator.domain.Classifier.model.Person;
 
 public class Classifier {
 
@@ -18,7 +18,7 @@ public class Classifier {
         this.noClassification = noClassification;
     }
 
-    public IWeightClassifier classify(PersonImcData data){
+    public IWeightClassifier classify(Person data){
 
         if(underweight.isOnRange(data))
             return underweight;

@@ -1,6 +1,6 @@
 package org.eldorado.calculator.domain.utils;
 
-import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
+import org.eldorado.calculator.domain.Classifier.model.Person;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -21,8 +21,8 @@ public class PersonCreatorCli implements Serializable {
         this.LOGGER = Logger.getLogger("PersonCreatorCli");
     }
 
-    public List<PersonImcData> createMultiplePerson(){
-        var people = new ArrayList<PersonImcData>();
+    public List<Person> createMultiplePerson(){
+        var people = new ArrayList<Person>();
         var option = false;
         do {
             var person = createPerson();
@@ -32,8 +32,7 @@ public class PersonCreatorCli implements Serializable {
         } while(option);
         return people;
     }
-    public PersonImcData createPerson(){
-
+    public Person createPerson(){
         String name = getName();
 
         LocalDate birthday = getLocalDate();
@@ -44,7 +43,7 @@ public class PersonCreatorCli implements Serializable {
 
         char gender = getGender();
 
-        return new PersonImcData(height, weight, name, gender, birthday);
+        return new Person(height, weight, name, gender, birthday);
     }
 
     private String getName() {
@@ -58,11 +57,11 @@ public class PersonCreatorCli implements Serializable {
         do {
             try {
                 System.out.println("Birthday: ");
-                birthday = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+                birthday = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 gotExecption = false;
                 return birthday;
             } catch (DateTimeParseException exception) {
-                LOGGER.warning("Invalid birthday, please use the following pattern: yyyy/mm/dd");
+                LOGGER.warning("Invalid birthday, please use the following pattern: yyyy-mm-dd");
             }
         } while(gotExecption);
         return birthday;

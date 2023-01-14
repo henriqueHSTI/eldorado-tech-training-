@@ -1,10 +1,10 @@
 package org.eldorado.calculator.domain.Classifier;
 
-import org.eldorado.calculator.domain.Classifier.model.PersonImcData;
+import org.eldorado.calculator.domain.Classifier.model.Person;
 
 public abstract class WeightClassifier implements IWeightClassifier{
     @Override
-    public abstract boolean isOnRange(PersonImcData data);
+    public abstract boolean isOnRange(Person data);
 
     @Override
     public String toString() {
