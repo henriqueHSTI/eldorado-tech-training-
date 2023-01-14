@@ -7,6 +7,7 @@ public class Person {
     private char gender;
     private double height;
     private double weight;
+    private double imc;
 
     public Integer getAge() {
         return age;
@@ -46,5 +47,18 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getImc() {
+        return imc;
+    }
+
+    public void setImc(double imc) {
+        this.imc = imc;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s;%s;%s;%s;%s;%s", this.name, this.age, this.gender, this.height, this.weight, this.imc);
     }
 }
