@@ -1,6 +1,7 @@
 package com.eldorado.org;
 
 import com.eldorado.org.imc.CalculaImcUtil;
+import com.eldorado.org.modelo.Pessoa;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -12,6 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+
+        Pessoa pessoa = new Pessoa();
 
 
 
