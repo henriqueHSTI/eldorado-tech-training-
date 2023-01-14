@@ -55,7 +55,9 @@ public class Main {
 
         fileManager.createFile(people);
         List<Person> registeredPeople = fileManager.readFile("people.txt");
-        List<Person> filteredPeople = fileManager.filterByGender('m');
+
+        System.out.println("Which gender do you like to filter? Type 'm' to male or 'f' to female:");
+        List<Person> filteredPeople = fileManager.filterByGender(sc.next().charAt(0));
 
         LOGGER.log(Level.INFO, String.format("Registered people: %s || Filtered people: %s", registeredPeople.toString(), filteredPeople.toString()));
     }
