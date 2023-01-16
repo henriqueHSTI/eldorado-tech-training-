@@ -79,11 +79,11 @@ public class InicioCalculoImc {
 
         Map<String, List<Pessoa>> mapPessoasGenero = pessoas.stream().collect(groupingBy(Pessoa::getGenero));
 
-        LOGGER.info(String.format("Número de Genero Masculino %s\nNúmero de Genero Feminino %s",
+        LOGGER.info(String.format("Número de Genero Masculino %d\nNúmero de Genero Feminino %d",
                 mapPessoasGenero.get("M").size(), mapPessoasGenero.get("F").size()));
 
 
-        var mediaPeso = pessoasF.stream().mapToDouble(Pessoa::getPeso).sum() / pessoasF.size();
+        var mediaPeso = pessoasF.stream().mapToDouble(Pessoa::getPeso).average();
 
         LOGGER.info(String.format("Peso Medio %s", mediaPeso));
 

@@ -24,11 +24,11 @@ public class GerenciadorDeArquivos {
         }
     }
 
-    public List<Pessoa>  lerArquivo(String nomeArquivo) {
+    public List<Pessoa> lerArquivo(String nomeArquivo) {
         List<Pessoa> pessoas = new ArrayList<>();
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(String.format("%s/%s.txt", CAMINHO, nomeArquivo)))) {
-            bufferedReader.readLine();
+            LOGGER.log(Level.INFO, "Cabeçario {0}", bufferedReader.readLine());
             String line = bufferedReader.readLine();
             while (line != null) {
                 String[] vetor = line.split(";");
