@@ -21,3 +21,4 @@ Repositório de Tarefas Turma Eldorado
 	- Kaibin Gao
 	- Jeison Fappi
 	- Jean Duarte
+	- Guilherme Aparecido de Goes
