@@ -1,14 +1,46 @@
+import com.eldorado.calculo.modelo.Pessoa;
+import com.eldorado.calculo.utilidades.CalculoImcFerramenta;
+
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Main {
+
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
 
-        double altura = 1.70;
-        double peso = 70;
+        var calculaImcFerramenta = new CalculoImcFerramenta();
+        var pessoa = new Pessoa();
 
-        double imc = 0;
+        Scanner scanner = new Scanner(System.in);
 
-        imc = peso/ (altura*altura);
+        System.out.println("Digite seu Nome");
+        pessoa.setNome(scanner.nextLine());
+
+        System.out.println("Digite sua altura");
+        pessoa.setAltura(scanner.nextDouble());
+
+        System.out.println("Digite seu peso");
+        pessoa.setPeso(scanner.nextDouble());
+
+        System.out.println("Digite susa Idade");
+        pessoa.setIdade(scanner.nextInt());
 
 
-        System.out.println(imc);
+        double imc = calculaImcFerramenta.calculaImc(pessoa);
+
+        LOGGER.log(Level.INFO, pessoa.toString());
+
+        calculaImcFerramenta.printInformacao(imc);
+
+        LOGGER.info(calculaImcFerramenta.retornaNivelObesidade("AAAA"));
+
+        private static Double lerValorUsuario(Scanner scanner){
+            
+        }
     }
+
+
 }
