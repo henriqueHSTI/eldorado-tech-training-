@@ -11,12 +11,12 @@ import java.util.logging.Logger;
 @AllArgsConstructor
 public class InvoiceBookPrinter {
     private static final Logger LOGGER = Logger.getLogger(InvoiceBookPrinter.class.getName());
+
     private final InvoiceBookEntity invoiceBookEntity;
 
     public void printBilling() {
-        LOGGER.log(Level.INFO, () -> MessageFormat.format("Print Billing {0}", invoiceBookEntity.toString()));
+        LOGGER.log(Level.INFO, () -> MessageFormat.format("Printg Billing {0}", invoiceBookEntity.toString()));
     }
-
 
 
 }

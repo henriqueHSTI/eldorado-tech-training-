@@ -13,6 +13,6 @@ public class InvoiceRepositoryNoSql implements SaveInvoice {
     @Override
     public void saveInvoice(InvoiceBookEntity invoiceBookEntity) {
         LOGGER.log(Level.INFO, () ->
-                MessageFormat.format("I will persist this in MongoDB: {0} ", invoiceBookEntity.toString()));
+                MessageFormat.format("I will persisting in mongo DB: {0}", invoiceBookEntity.toString()));
     }
 }

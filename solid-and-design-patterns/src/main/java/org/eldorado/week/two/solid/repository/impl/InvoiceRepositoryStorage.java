@@ -7,12 +7,13 @@ import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class InvoiceRepositoryStorage implements SaveInvoice {
 
+public class InvoiceRepositoryStorage implements SaveInvoice {
     private static final Logger LOGGER = Logger.getLogger(InvoiceRepositoryStorage.class.getName());
+
     @Override
     public void saveInvoice(InvoiceBookEntity invoiceBookEntity) {
         LOGGER.log(Level.INFO, () ->
-                MessageFormat.format("I will persist this: {0} ", invoiceBookEntity.toString()));
+                MessageFormat.format("I will persisting this: {0} ", invoiceBookEntity.toString()));
     }
 }

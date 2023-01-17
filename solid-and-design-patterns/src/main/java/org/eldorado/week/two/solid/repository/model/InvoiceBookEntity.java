@@ -1,16 +1,10 @@
 package org.eldorado.week.two.solid.repository.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.text.DecimalFormat;
-import java.util.logging.Logger;
 
-
-@AllArgsConstructor
 @Data
 public class InvoiceBookEntity {
-    private static final Logger LOGGER = Logger.getLogger(InvoiceBookEntity.class.getName());
     BookEntity book;
     int quantity;
 
@@ -37,7 +31,6 @@ public class InvoiceBookEntity {
                 "\nquantity= " + quantity +
                 "\ndiscount= " + discount +
                 "\nfee= R$ " + fee +
-                "\ntotalAmount= R$ " + new DecimalFormat("#,##0.00").format(totalAmount);
+                "\ntotalAmount= R$ " + totalAmount;
     }
-
 }
