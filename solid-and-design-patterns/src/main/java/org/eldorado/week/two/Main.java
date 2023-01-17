@@ -25,26 +25,26 @@ public class Main {
         double fee = 0.11;
         double shipping = 3.0;
 
-        var invoce = new InvoiceBookEntity(book, quantity, discount, fee, shipping);
+        var invoice = new InvoiceBookEntity(book, quantity, discount, fee, shipping);
 
-        var invoiceCalulator = new InvoiceCalculator(invoce);
-        invoce.setTotalAmount(invoiceCalulator.calculateTotalAmount());
-        invoiceCalulator.calcuteRoute();
+        var invoiceCalculator = new InvoiceCalculator(invoice);
+        invoice.setTotalAmount(invoiceCalculator.calculateTotalAmount());
+        invoiceCalculator.calcuteRoute();
 
-        var invoicePrinter = new InvoiceBookPrinter(invoce);
+        var invoicePrinter = new InvoiceBookPrinter(invoice);
         invoicePrinter.printBilling();
 
-        var invoiceCalulatorWithoutFee = new InvoiceCalculatorWithoutFee(invoce);
-        invoce.setTotalAmount(invoiceCalulatorWithoutFee.calculateTotalAmount());
-        invoiceCalulatorWithoutFee.calcuteRoute();
+        var invoiceCalculatorWithoutFee = new InvoiceCalculatorWithoutFee(invoice);
+        invoice.setTotalAmount(invoiceCalculatorWithoutFee.calculateTotalAmount());
+        invoiceCalculatorWithoutFee.calcuteRoute();
 
         invoicePrinter.printBilling();
 
         SaveInvoice saveInvoice = new InvoiceRepositoryStorage();
-        saveInvoice.saveInvoice(invoce);
+        saveInvoice.saveInvoice(invoice);
 
         saveInvoice = new InvoiceRepositoryNoSql();
-        saveInvoice.saveInvoice(invoce);
+        saveInvoice.saveInvoice(invoice);
 
 
     }
