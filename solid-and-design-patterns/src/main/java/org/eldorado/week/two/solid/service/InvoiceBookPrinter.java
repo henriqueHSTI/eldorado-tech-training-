@@ -1,7 +1,7 @@
 package org.eldorado.week.two.solid.service;
 
 import lombok.AllArgsConstructor;
-import org.eldorado.week.two.solid.model.InvoiceBookEntity;
+import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 
 import java.text.MessageFormat;
 import java.util.logging.Level;

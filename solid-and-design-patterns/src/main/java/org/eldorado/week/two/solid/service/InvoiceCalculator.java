@@ -1,7 +1,7 @@
 package org.eldorado.week.two.solid.service;
 
 import lombok.RequiredArgsConstructor;
-import org.eldorado.week.two.solid.model.InvoiceBookEntity;
+import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 
 @RequiredArgsConstructor
 public class InvoiceCalculator {
