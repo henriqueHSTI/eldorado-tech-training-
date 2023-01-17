@@ -1,15 +1,25 @@
 package org.eldorado.week.two.solid.service;
 
-import lombok.RequiredArgsConstructor;
 import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 
-@RequiredArgsConstructor
 public class InvoiceCalculator {
-    private final InvoiceBookEntity invoiceBookEntity;
+    protected InvoiceBookEntity invoiceBookEntity;
+
+    public InvoiceCalculator(InvoiceBookEntity invoiceBookEntity) {
+        this.invoiceBookEntity = invoiceBookEntity;
+    }
 
     public double calculateTotalAmount() {
         var price = ((invoiceBookEntity.getBook().getPrice() - invoiceBookEntity.getBook().getPrice() * invoiceBookEntity.getDiscount()))
                 * invoiceBookEntity.getQuantity();
         return (price * (1 + invoiceBookEntity.getFee()) + invoiceBookEntity.getShipping());
+    }
+
+    public void calcuteRoute() {
+
+    }
+
+    public void calcuteTimeToDelivery() {
+
     }
 }
