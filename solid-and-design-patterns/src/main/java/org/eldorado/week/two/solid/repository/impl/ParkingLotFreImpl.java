@@ -1,18 +1,16 @@
 package org.eldorado.week.two.solid.repository.impl;
 
-import org.eldorado.week.two.solid.repository.PaidParkingLot;
+import lombok.SneakyThrows;
+import org.eldorado.week.two.solid.repository.FreeParkingLot;
+import org.eldorado.week.two.solid.repository.ParkingLot;
 import org.eldorado.week.two.solid.repository.model.Car;
 
-public class ParkingLotImpl implements PaidParkingLot {
+public class ParkingLotFreImpl implements FreeParkingLot {
+
 
     @Override
-    public void payParkingLot(Car car) {
+    public void showFreeCard() {
 
-    }
-
-    @Override
-    public double calculateRate(Car car) {
-        return 0;
     }
 
     @Override
