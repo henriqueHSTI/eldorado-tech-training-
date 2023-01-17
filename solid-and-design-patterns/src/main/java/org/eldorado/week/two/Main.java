@@ -1,10 +1,10 @@
 package org.eldorado.week.two;
 
-import org.eldorado.week.two.solid.model.BookEntity;
-import org.eldorado.week.two.solid.model.InvoiceBookEntity;
+import org.eldorado.week.two.solid.repository.model.BookEntity;
+import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 import org.eldorado.week.two.solid.service.InvoiceBookPrinter;
 import org.eldorado.week.two.solid.service.InvoiceCalculator;
-import org.eldorado.week.two.solid.model.repository.InvoiceRepository;
+import org.eldorado.week.two.solid.repository.InvoiceRepositoryManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class Main {
         var invoicePrinter = new InvoiceBookPrinter(invoice);
         invoicePrinter.printBilling();
 
-        var invoiceRepository = new InvoiceRepository(invoice);
+        var invoiceRepository = new InvoiceRepositoryManager(invoice);
         invoiceRepository.saveToStorage("New Invoice");
 
         System.out.println("Hello world!");

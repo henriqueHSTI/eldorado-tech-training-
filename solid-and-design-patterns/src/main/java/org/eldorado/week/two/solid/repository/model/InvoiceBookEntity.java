@@ -1,11 +1,9 @@
-package org.eldorado.week.two.solid.model;
+package org.eldorado.week.two.solid.repository.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.text.DecimalFormat;
-import java.text.MessageFormat;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 

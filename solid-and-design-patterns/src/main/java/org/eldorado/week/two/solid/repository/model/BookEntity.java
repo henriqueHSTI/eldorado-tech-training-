@@ -1,4 +1,4 @@
-package org.eldorado.week.two.solid.model;
+package org.eldorado.week.two.solid.repository.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
