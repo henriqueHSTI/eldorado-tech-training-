@@ -46,6 +46,5 @@ public class Main {
         saveInvoice = new InvoiceRepositoryNoSql();
         saveInvoice.saveInvoice(invoce);
 
-
     }
 }
