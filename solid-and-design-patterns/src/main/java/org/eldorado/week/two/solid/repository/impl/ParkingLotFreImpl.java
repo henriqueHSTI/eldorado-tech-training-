@@ -1,9 +1,6 @@
 package org.eldorado.week.two.solid.repository.impl;
 
-import lombok.SneakyThrows;
 import org.eldorado.week.two.solid.repository.FreeParkingLot;
-import org.eldorado.week.two.solid.repository.ParkingLot;
-import org.eldorado.week.two.solid.repository.model.Car;
 
 public class ParkingLotFreImpl implements FreeParkingLot {
 
@@ -19,7 +16,7 @@ public class ParkingLotFreImpl implements FreeParkingLot {
     }
 
     @Override
-    public void leaveParting() {
+    public void leaveParking() {
 
     }
 

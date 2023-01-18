@@ -21,7 +21,7 @@ public class ParkingLotImpl implements PaidParkingLot {
     }
 
     @Override
-    public void leaveParting() {
+    public void leaveParking() {
 
     }
 

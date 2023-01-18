@@ -29,14 +29,14 @@ public class Main {
 
         var invoiceCalculator = new InvoiceCalculator(invoice);
         invoice.setTotalAmount(invoiceCalculator.calculateTotalAmount());
-        invoiceCalculator.calcuteRoute();
+        invoiceCalculator.calculateRoute();
 
         var invoicePrinter = new InvoiceBookPrinter(invoice);
         invoicePrinter.printBilling();
 
         var invoiceCalculatorWithoutFee = new InvoiceCalculatorWithoutFee(invoice);
         invoice.setTotalAmount(invoiceCalculatorWithoutFee.calculateTotalAmount());
-        invoiceCalculatorWithoutFee.calcuteRoute();
+        invoiceCalculatorWithoutFee.calculateRoute();
 
         invoicePrinter.printBilling();
 

@@ -5,10 +5,6 @@ import org.eldorado.week.two.solid.repository.impl.InvoiceRepositoryNoSql;
 import org.eldorado.week.two.solid.repository.impl.InvoiceRepositoryStorage;
 import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 
-import java.text.MessageFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 @AllArgsConstructor
 public class InvoiceRepositoryManager {
     public InvoiceRepositoryStorage invoiceRepositoryStorage;

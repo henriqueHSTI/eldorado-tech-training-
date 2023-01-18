@@ -15,11 +15,11 @@ public class InvoiceCalculator {
         return (price * (1 + invoiceBookEntity.getFee()) + invoiceBookEntity.getShipping());
     }
 
-    public void calcuteRoute() {
+    public void calculateRoute() {
 
     }
 
-    public void calcuteTimeToDelivery() {
+    public void calculateTimeToDelivery() {
 
     }
 }
