@@ -1,9 +1,10 @@
 package org.eldorado.week.two.designpattern.adapter;
 
-public class SDLImagemAdapter extends SDL_Surface implements ImagemTarget {
+public class SDLImagemAdapter extends SDLSurface implements ImagemTarget {
 
 	@Override
 	public void carregarImagem(String nomeDoArquivo) {
+
 		SDL_CarregarSurface(nomeDoArquivo);
 	}
 

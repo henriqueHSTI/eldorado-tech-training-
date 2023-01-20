@@ -29,7 +29,7 @@ public class ArquivoComposite extends ArquivoComponent {
 				return;
 			}
 		}
-		throw new Exception("N�o existe este arquivo");
+		throw new Exception("Não existe este arquivo");
 	}
 
 	public ArquivoComponent getArquivo(String nomeDoArquivo) throws Exception {
@@ -38,6 +38,6 @@ public class ArquivoComposite extends ArquivoComponent {
 				return arquivoTmp;
 			}
 		}
-		throw new Exception("N�o existe este arquivo");
+		throw new Exception("Não existe este arquivo");
 	}
 }

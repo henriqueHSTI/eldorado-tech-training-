@@ -1,0 +1,147 @@
+openapi: 3.0.3
+info:
+  title: Eldorado Treinamento Java
+  description: Treinamento java String 
+  contact:
+    email: henrique@hsti.eng.br
+  version: 1.0.11
+tags:
+  - name: IMC
+    description: Calculo de IMC
+paths:
+  /imc-calculator:
+    post:
+      tags:
+        - IMC
+      summary: Cadastra novo IMC
+      description: Cadastra novo IMC
+      operationId: cadastraImc
+      requestBody:
+        description: Successful operation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImcBase'
+        required: true
+      responses:
+        '200':
+          description: Operação com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImcBase'          
+        '405':
+          description: Entrada invalida
+    get:
+      tags:
+        - IMC
+      summary: Busca todos os codigos
+      description: Retorna todos os IMC's
+      operationId: getImcList
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ImcBase'          
+        '400':
+          description: Bad Request
+        '404':
+          description: NOT FOUND
+  /imc-calculator/{imcId}:
+    put:
+      tags:
+        - IMC
+      summary: Atualiza um IMC
+      description: Atualiza um IMC
+      operationId: updateImc
+      parameters:
+        - name: imcId
+          in: path
+          description: Id do IMC
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Atualiza um imc
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImcBase'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImcBase'          
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: IMC NOT FOUND
+        '405':
+          description: Validation exception
+    get:
+      tags:
+        - IMC
+      summary: Busca IMC por ID
+      description: Retorna um unico 
+      operationId: getImcById
+      parameters:
+        - name: imcId
+          in: path
+          description: Id do IMC
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImcBase'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ImcBase'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: IMC NOT FOUND
+    delete:
+      tags:
+        - IMC
+      summary: Deleta IMC
+      description: Deleta IMC
+      operationId: deletaImc
+      parameters:
+        - name: imcId
+          in: path
+          description: Id do IMC para deletar
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid IMC value
+components:
+  schemas:
+    ImcBase:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        massaCorporal:
+          type: number
+          format: float
+        classificacao:
+          type: string
+        nivelObesidade:
+          type: string

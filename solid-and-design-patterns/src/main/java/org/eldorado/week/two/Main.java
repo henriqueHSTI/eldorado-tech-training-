@@ -1,13 +1,19 @@
 package org.eldorado.week.two;
 
+import org.eldorado.week.two.designpattern.singleton.Estoque;
 import org.eldorado.week.two.solid.repository.SaveInvoice;
 import org.eldorado.week.two.solid.repository.impl.InvoiceRepositoryNoSql;
 import org.eldorado.week.two.solid.repository.impl.InvoiceRepositoryStorage;
 import org.eldorado.week.two.solid.repository.model.BookEntity;
+import org.eldorado.week.two.solid.repository.model.Car;
 import org.eldorado.week.two.solid.repository.model.InvoiceBookEntity;
 import org.eldorado.week.two.solid.service.InvoiceBookPrinter;
 import org.eldorado.week.two.solid.service.InvoiceCalculator;
 import org.eldorado.week.two.solid.service.InvoiceCalculatorWithoutFee;
+
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,6 +51,70 @@ public class Main {
 
         saveInvoice = new InvoiceRepositoryNoSql();
         saveInvoice.saveInvoice(invoce);
+
+
+        String model = "Ford Ka";
+        String collor = "Gray";
+        int yeara = 2022;
+        int enginePower = 80;
+        String licencePlate = "GQU-9633";
+        int numberDoor = 4;
+
+        List<String> itens = Collections.emptyList();
+
+        int maxVelocity = 170;
+        var car = new Car(model, collor, enginePower, yeara, licencePlate, numberDoor, itens, maxVelocity);
+
+        System.out.println(car);
+
+        Estoque estoque = Estoque.getInstance();
+
+
+        Calendar calendar = Calendar.getInstance();
+        Calendar calendarIn = new Calendar() {
+            @Override
+            protected void computeTime() {
+
+            }
+
+            @Override
+            protected void computeFields() {
+
+            }
+
+            @Override
+            public void add(int field, int amount) {
+
+            }
+
+            @Override
+            public void roll(int field, boolean up) {
+
+            }
+
+            @Override
+            public int getMinimum(int field) {
+                return 0;
+            }
+
+            @Override
+            public int getMaximum(int field) {
+                return 0;
+            }
+
+            @Override
+            public int getGreatestMinimum(int field) {
+                return 0;
+            }
+
+            @Override
+            public int getLeastMaximum(int field) {
+                return 0;
+            }
+        };
+
+        Calendar.getInstance();
+
 
     }
 }

@@ -1,6 +1,6 @@
 package org.eldorado.week.two.designpattern.adapter;
 
-public class SDL_Surface {
+public class SDLSurface {
 
 	public void SDL_CarregarSurface(String arquivo) {
 		System.out.println("Imagem " + arquivo + " carregada.");

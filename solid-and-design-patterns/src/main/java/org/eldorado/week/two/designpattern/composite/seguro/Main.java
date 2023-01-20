@@ -6,7 +6,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// O cliente precisa conhecer a implementa��o das classes concretas,
+		// O cliente precisa conhecer a implementção das classes concretas,
 		// pois a interface de um ArquivoVideo � diferente de um
 		// ArquivoComposite
 		ArquivoComponent meuVideo = new ArquivoVideo("meu video.rmvb");

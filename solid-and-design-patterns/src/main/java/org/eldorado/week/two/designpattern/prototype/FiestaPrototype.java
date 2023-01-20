@@ -21,4 +21,8 @@ public class FiestaPrototype extends CarroPrototype {
 		return new FiestaPrototype(this);
 	}
 
+	public void limitarVelocidadePorPais(){
+
+	}
+
 }

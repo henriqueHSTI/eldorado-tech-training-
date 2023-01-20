@@ -8,7 +8,6 @@ public abstract class CarroBuilder {
 	public abstract void buildAnoDeFabricacao();
 	public abstract void buildModelo();
 	public abstract void buildMontadora();
-	
 	public CarroProduct getCarro(){
 		return carro;
 	};
