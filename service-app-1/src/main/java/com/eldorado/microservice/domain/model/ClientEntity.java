@@ -9,13 +9,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document("client-imc")
+@Document("client")
 public class ClientEntity {
     @Id
     private UUID id;
@@ -34,5 +35,6 @@ public class ClientEntity {
     private String phone;
     @NonNull
     private String address;
+
 
 }
