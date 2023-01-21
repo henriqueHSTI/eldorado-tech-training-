@@ -1,3 +1,15 @@
 server:
-  port: 8085
+  port: 8080
   name: "My Application"
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  data:
+    auto-index-creation: true
+    uri: mongodb://192.168.15.23:27017/imc-calculator?retryWrites=true&w=majority
+
+
+
+
