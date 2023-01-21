@@ -15,13 +15,18 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Document("imc-calculator")
-public class ImcEntity {
+public class ImcEntity implements Comparable<ImcEntity> {
 
     @Id
     private UUID id;
-    private float bodyMass;
+    private Double bodyMass;
     private String classification;
     private String obesityLevel;
     private LocalDateTime offsetDateTime;
     private String createdAt;
+
+    @Override
+    public int compareTo(ImcEntity o) {
+        return bodyMass.compareTo(o.getBodyMass());
+    }
 }

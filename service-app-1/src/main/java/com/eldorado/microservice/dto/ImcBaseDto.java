@@ -17,6 +17,5 @@ public class ImcBaseDto {
     private float bodyMass;
     private String classification;
     private String obesityLevel;
-
     private LocalDateTime createAt;
 }
