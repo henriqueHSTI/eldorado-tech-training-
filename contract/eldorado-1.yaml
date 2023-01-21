@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Eldorado Treinamento Java
-  description: Treinamento java String 
+  description: Treinamento java String
   contact:
     email: henrique@hsti.eng.br
   version: 1.0.11
@@ -15,13 +15,20 @@ paths:
         - IMC
       summary: Cadastra novo IMC
       description: Cadastra novo IMC
-      operationId: cadastraImc
+      operationId: saveImc
       requestBody:
         description: Successful operation
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ImcBase'
+            examples:
+              Example 1:
+                value:
+                  id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                  bodyMass: 0
+                  classification: string
+                  obesityLevel: string
         required: true
       responses:
         '200':
@@ -29,7 +36,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ImcBase'          
+                $ref: '#/components/schemas/ImcBase'
         '405':
           description: Entrada invalida
     get:
@@ -45,12 +52,12 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ImcBase'          
+                  $ref: '#/components/schemas/ImcBase'
         '400':
           description: Bad Request
         '404':
           description: NOT FOUND
-  /imc-calculator/{imcId}:
+  '/imc-calculator/{imcId}':
     put:
       tags:
         - IMC
@@ -78,7 +85,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ImcBase'          
+                $ref: '#/components/schemas/ImcBase'
         '400':
           description: Invalid ID supplied
         '404':
@@ -89,7 +96,7 @@ paths:
       tags:
         - IMC
       summary: Busca IMC por ID
-      description: Retorna um unico 
+      description: Retorna um unico
       operationId: getImcById
       parameters:
         - name: imcId
@@ -105,7 +112,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ImcBase'          
+                $ref: '#/components/schemas/ImcBase'
             application/xml:
               schema:
                 $ref: '#/components/schemas/ImcBase'
@@ -128,6 +135,8 @@ paths:
             type: integer
             format: int64
       responses:
+        '200':
+          description: Successful operation
         '400':
           description: Invalid IMC value
 components:
@@ -138,10 +147,10 @@ components:
         id:
           type: string
           format: uuid
-        massaCorporal:
+        bodyMass:
           type: number
           format: float
-        classificacao:
+        classification:
           type: string
-        nivelObesidade:
+        obesityLevel:
           type: string

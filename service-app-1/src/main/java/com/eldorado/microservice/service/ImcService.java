@@ -5,6 +5,7 @@ import com.eldorado.microservice.domain.repository.ImcRepository;
 import com.eldorado.microservice.dto.ImcBaseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,15 +18,17 @@ public class ImcService {
 
     private final ImcRepository imcRepository;
 
+    private final ModelMapper modelMapper;
+
     public ImcBaseDto saveImc(ImcBaseDto imcBaseDto) {
 
-        var imcEntity = ImcEntity.builder()
-                .id(UUID.randomUUID())
-                .offsetDateTime(LocalDateTime.now())
-                .createdAt("JOSE SILVA")
-                .bodyMass(imcBaseDto.getBodyMass()).
-                classification(imcBaseDto.getClassification())
-                .obesityLevel(imcBaseDto.getObesityLevel()).build();
+
+        var imcEntity = modelMapper.map(imcBaseDto, ImcEntity.class);
+
+        log.info("List -> {}", imcEntity);
+        imcEntity.setCreatedAt("JOSE");
+        imcEntity.setOffsetDateTime(LocalDateTime.now());
+        imcEntity.setId(UUID.randomUUID());
 
         var imcEntitySave = imcRepository.save(imcEntity);
 
@@ -34,6 +37,8 @@ public class ImcService {
 
         return imcBaseDto;
     }
+
+
 
 
 }

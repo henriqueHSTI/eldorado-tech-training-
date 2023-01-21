@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -16,4 +17,6 @@ public class ImcBaseDto {
     private float bodyMass;
     private String classification;
     private String obesityLevel;
+
+    private LocalDateTime createAt;
 }

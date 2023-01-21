@@ -1,14 +1,26 @@
 server:
   port: 8080
-  name: "My Application"
-
+  name: "Prosper Eldorado"
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: ${MONGODB_CONNECTION_STRING}
+---
 spring:
   config:
     activate:
       on-profile: dev
   data:
-    auto-index-creation: true
-    uri: mongodb://192.168.15.23:27017/imc-calculator?retryWrites=true&w=majority
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb://localhost:27017/imc-calculator?retryWrites=true&w=majority?ssl=false
+
+
 
 
 
